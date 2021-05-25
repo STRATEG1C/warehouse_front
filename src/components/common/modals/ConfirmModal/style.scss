@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/variables';
+
+.modal {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 999;
+  }
+
+  &__box {
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    background-color: $txt-secondary-color;
+    color: $txt-primary-color;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__action-buttons {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      margin: 20px 20px 10px;
+    }
+  }
+}

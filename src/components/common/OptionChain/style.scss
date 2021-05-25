@@ -1,0 +1,58 @@
+@import '../../../assets/styles/variables';
+
+.option-chain {
+  display: flex;
+
+  &__wrapper {
+    padding: 10px;
+  }
+
+  &__option {
+    cursor: pointer;
+    width: 130px;
+    text-align: center;
+    line-height: 36px;
+    border: 1px solid $bg-primary-color;
+    margin: 20px;
+    position: relative;
+
+    &.selected {
+      background-color: $bg-primary-color;
+      color: $txt-secondary-color;
+
+      &:hover {
+        background-color: $bg-primary-color;
+        color: $txt-secondary-color;
+      }
+    }
+
+    &:hover {
+      background-color: #a17d00;
+      color: $txt-secondary-color;
+    }
+
+    &:after {
+      content: ' ';
+      width: 42px;
+      height: 3px;
+      background: $bg-primary-color;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      z-index: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

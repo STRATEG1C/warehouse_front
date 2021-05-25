@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables';
+
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+
+  &__content {
+    width: 100%;
+    min-height: 100vh;
+
+    &.below-header {
+      padding-top: 100px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $bg-primary-color;
+  color: $txt-secondary-color;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 10;
+
+  &__logo {
+    width: 250px;
+    background-color: $bg-secondary-color;
+    color: $txt-primary-color;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 24px;
+  }
+}

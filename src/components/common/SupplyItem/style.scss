@@ -1,0 +1,52 @@
+@import '../../../assets/styles/variables';
+
+.mobile-list {
+  padding: 20px;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: auto auto 20px;
+  padding: 20px;
+  box-shadow: 0 0 3px #b4b4b4;
+  border-radius: 20px;
+  position: relative;
+
+  &:active {
+    background-color: #eaeaea;
+  }
+
+  .link {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    transform: translateY(-50%) rotate(-90deg);
+    transition: ease all .3s;
+
+    &.expanded {
+      transform: translateY(-50%) rotate(90deg);
+      top: 30px;
+    }
+  }
+}
+
+.workers-list {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &-item {
+    padding: 4px 6px;
+    margin: 0 5px 10px 5px;
+    border: 1px solid $bg-secondary-color;
+    border-radius: 6px;
+
+    &.selected {
+      background-color: $bg-secondary-color;
+      color: #fff;
+    }
+  }
+}
