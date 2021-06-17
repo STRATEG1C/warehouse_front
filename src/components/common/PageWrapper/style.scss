@@ -17,6 +17,8 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
   background-color: $bg-primary-color;
   color: $txt-secondary-color;
 
@@ -35,5 +37,9 @@
     align-items: center;
     padding: 20px;
     font-size: 24px;
+  }
+
+  .btn {
+    margin-top: 0;
   }
 }

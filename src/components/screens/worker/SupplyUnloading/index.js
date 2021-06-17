@@ -63,7 +63,7 @@ const SupplyUnloading = ({ match }) => {
       .then((res) => {
         setSupply(res.data.item);
       });
-  }, []);
+  }, [match]);
 
   useEffect(() => {
     if (!supply) {
@@ -79,7 +79,7 @@ const SupplyUnloading = ({ match }) => {
     if (isFullyUnloaded) {
       history.push(TASK_LIST);
     }
-  }, [supply]);
+  }, [supply, history]);
 
   if (!supply) {
     return (

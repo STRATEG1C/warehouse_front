@@ -49,7 +49,7 @@ const SupplyItem = ({ item, workers, redirect }) => {
       <div className={`link circle-with-arrow ${isExpanded ? 'expanded' : ''}`}>&rarr;</div>
       {isExpanded && (
         <div className="task-info">
-          <div className="workers-list">
+          {!redirect && <div className="workers-list">
             {workers.map(worker => (
               <div
                 key={worker.id}
@@ -61,7 +61,7 @@ const SupplyItem = ({ item, workers, redirect }) => {
                 {worker.last_name}
               </div>
             ))}
-          </div>
+          </div>}
           <Button text={redirect ? "Продолжить разгрузку" : "Начать разгрузку"} onClick={onStartUnloading} className="btn" />
         </div>
       )}

@@ -14,4 +14,15 @@
       font-size: 28px;
     }
   }
+
+  &__nav {
+    display: flex;
+    justify-content: space-around;
+
+    .sidebar-wrapper__links {
+      &:last-child {
+        border-bottom: 1px solid $bg-secondary-color;
+      }
+    }
+  }
 }

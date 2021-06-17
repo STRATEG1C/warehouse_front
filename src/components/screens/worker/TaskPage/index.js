@@ -22,7 +22,7 @@ const TaskPage = ({ match }) => {
       .then((res) => {
         setTaskAssignment(res.data.item);
       });
-  }, []);
+  }, [match]);
 
   useEffect(() => {
     if (productBarcode) {

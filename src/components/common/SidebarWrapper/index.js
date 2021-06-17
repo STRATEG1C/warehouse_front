@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { LOCATIONS, SUPPLIES } from '../../../constants/pathNames';
+import { LOCATIONS, ORDERS, SUPPLIES } from '../../../constants/pathNames';
 import './style.scss';
 
 const SidebarWrapper = ({ title, subtitle, children }) => {
@@ -11,6 +11,7 @@ const SidebarWrapper = ({ title, subtitle, children }) => {
         <nav className="sidebar-wrapper__nav">
           <Link to={LOCATIONS} className="sidebar-wrapper__links text-size-medium">Локации</Link>
           <Link to={SUPPLIES} className="sidebar-wrapper__links text-size-medium">Поставки</Link>
+          <Link to={ORDERS} className="sidebar-wrapper__links text-size-medium">Заказы</Link>
         </nav>
       </div>
       <div className="sidebar-wrapper__content">

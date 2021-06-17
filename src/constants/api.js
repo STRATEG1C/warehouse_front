@@ -10,6 +10,8 @@ export const API_SUPPLIES = '/supply/supplies';
 export const API_START_UNLOADING = '/supply/start-unloading';
 export const API_UNLOAD_PRODUCT = '/supply/supplies/:supplyId/pallet/:palletId';
 
+export const API_ORDERS = '/order/orders';
+
 export const API_STAFF = '/staff/users';
 
 export const API_TASKS = '/staff/tasks';

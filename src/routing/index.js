@@ -8,7 +8,11 @@ import {
   LOGIN,
   SUPPLIES,
   SUPPLIES_IN_WAREHOUSE,
-  SUPPLY_INFO, SUPPLY_UNLOADING, TASK, TASK_LIST,
+  SUPPLY_INFO,
+  SUPPLY_UNLOADING,
+  TASK,
+  TASK_LIST,
+  ORDERS, ORDER_INFO
 } from '../constants/pathNames';
 import { selectCurrentUser } from '../store/Auth';
 import Login from '../components/screens/Login';
@@ -23,6 +27,8 @@ import SupplyList from '../components/screens/worker/SupplyList';
 import SupplyUnloading from '../components/screens/worker/SupplyUnloading';
 import TaskList from '../components/screens/worker/TaskList';
 import TaskPage from '../components/screens/worker/TaskPage';
+import Orders from '../components/screens/manager/Orders';
+import OrderInfo from '../components/screens/manager/OrderInfo';
 
 const Routing = () => {
   const currentUser = useSelector(state => selectCurrentUser(state.auth));
@@ -40,6 +46,8 @@ const Routing = () => {
           <AuthenticatedRoute exact path={EDIT_LOCATION} component={EditLocation} />
           <AuthenticatedRoute exact path={SUPPLIES} component={Supplies} />
           <AuthenticatedRoute exact path={SUPPLY_INFO} component={SupplyInfo} />
+          <AuthenticatedRoute exact path={ORDERS} component={Orders} />
+          <AuthenticatedRoute exact path={ORDER_INFO} component={OrderInfo} />
         </>
       )
       : (

@@ -10,6 +10,7 @@ import Spinner from '../../../common/Spinner';
 import TextGroup from '../../../common/TextGroup';
 import OptionChain from '../../../common/OptionChain';
 import ConfirmModal from '../../../common/modals/ConfirmModal';
+import Table from '../../../common/Table';
 
 const statusOptions = [
   {
@@ -29,6 +30,22 @@ const statusOptions = [
     label: 'Разгружается',
   },
 ]
+
+const columns = [
+  {
+    header: '#',
+    key: 'id',
+    flex: '0.02'
+  },
+  {
+    header: 'Название',
+    key: 'name',
+  },
+  {
+    header: 'Количество',
+    key: 'quantity'
+  },
+];
 
 const SupplyInfo = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -79,6 +96,14 @@ const SupplyInfo = ({ match }) => {
     setPendingStatus(null);
   }
 
+  const mapProductList = (productList) => {
+    return productList.map((item, i) => ({
+      id: i+1,
+      name: item.name,
+      quantity: item.quantity,
+    }));
+  };
+
   return (
     <PageWrapper title="Supplies" match={match}>
       <SidebarWrapper
@@ -128,6 +153,12 @@ const SupplyInfo = ({ match }) => {
                   className="create-location__input"
                 />
               </div>
+              <p className="text-size-medium content-box__title">Заказанные продукты</p>
+              <Table
+                columns={columns}
+                data={mapProductList(supply.products)}
+                loadingState={isLoading}
+              />
             </>
           )}
         </div>
